@@ -3,7 +3,6 @@ package com.mrrobot.clonecraft;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Keys;
 import com.badlogic.gdx.graphics.Camera;
-import com.badlogic.gdx.graphics.g3d.utils.FirstPersonCameraController;
 
 public class FPSControl extends FPCameraController {
 	

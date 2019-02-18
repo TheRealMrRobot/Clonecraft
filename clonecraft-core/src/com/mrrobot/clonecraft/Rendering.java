@@ -1,6 +1,5 @@
 package com.mrrobot.clonecraft;
 
-import java.awt.Font;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Camera;
