@@ -5,8 +5,12 @@ import com.badlogic.gdx.graphics.g3d.ModelBatch;
 import com.badlogic.gdx.math.Vector3;
 import com.badlogic.gdx.utils.Disposable;
 import com.mrrobot.clonecraft.blocks.BlockDirt;
+import com.mrrobot.clonecraft.blocks.BlockGold;
 import com.mrrobot.clonecraft.blocks.BlockGrass;
+import com.mrrobot.clonecraft.blocks.BlockSand;
 import com.mrrobot.clonecraft.blocks.BlockStone;
+import com.mrrobot.clonecraft.blocks.BlockTnt;
+import com.mrrobot.clonecraft.blocks.BlockWater;
 
 public class Grid implements Disposable {
 	
@@ -23,24 +27,24 @@ public class Grid implements Disposable {
 		// Lays out a base line
 		for (int x = 0; x < grid_size; x++) {
 			for (int z = 0; z < grid_size; z++) {
-				field[x][0][z] = new BlockStone();
+				field[x][0][z] = new BlockTnt();
 				//field[x][1][z] = new BlockStone();
 				//field[x][2][z] = new BlockStone();
 				//field[x][3][z] = new BlockStone();
 				//field[x][4][z] = new BlockStone();
 				//field[x][5][z] = new BlockStone();
 				//field[x][6][z] = new BlockStone();
-				field[x][31][z] = new BlockGrass();
+				field[x][31][z] = new BlockGold();
 				
 			}
 		}
 		
 		// Create Posts at the corners -> DICE
 		for (int i = 0; i < grid_size - 1; i++) {
-			field[0][i][0] = new BlockStone();
-			field[31][i][0] = new BlockStone();
-			field[0][i][31] = new BlockStone();
-			field[31][i][31] = new BlockStone();
+			field[0][i][0] = new BlockWater();
+			field[31][i][0] = new BlockWater();
+			field[0][i][31] = new BlockWater();
+			field[31][i][31] = new BlockWater();
 			
 		}
 		
@@ -112,7 +116,7 @@ public class Grid implements Disposable {
 						updatePosition();
 					}
 				} else if (type == Block.Type.DirtBlock) {
-					field[last_position_x][last_position_y][last_position_z] = new BlockDirt();
+					field[last_position_x][last_position_y][last_position_z] = new BlockSand();
 					updatePosition();
 				}
 				break;
